@@ -15,7 +15,7 @@ trainer = VQGanVAETrainer(
     vit_vae,
     folder = r'I:\share\zhlu6105\dataset\MONO\vitdata',
     num_train_steps = 100000,
-    lr = 3e-5,
+    lr = 1e-4,
     batch_size = 8,
     grad_accum_every = 8,
     amp = True

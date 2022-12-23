@@ -638,8 +638,10 @@ class VitVQGanVAE(nn.Module):
             discr_loss = self.discr_loss(fmap_discr_logits, img_discr_logits)
 
             if apply_grad_penalty:
-                gp = gradient_penalty(img, img_discr_logits)
+                gp = gradient_penalty(img, img_discr_logits) * 0.1
                 loss = discr_loss + gp
+            else:
+                loss = discr_loss
 
             if return_recons:
                 return loss, fmap
